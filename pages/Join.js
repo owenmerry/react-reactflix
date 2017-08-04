@@ -2,7 +2,7 @@ import React from 'react';
 
 
 //APP
-const Login = React.createClass({
+const Join = React.createClass({
     
 getInitialState: function() {
     return {
@@ -12,12 +12,12 @@ getInitialState: function() {
     
 render: function() {
     return (
-        <div>
-            Login Page
+        <div className="join_page">
+            Signin Page
         </div>
     );
   }
 });
 
-export default Login;
+export default Join;
  

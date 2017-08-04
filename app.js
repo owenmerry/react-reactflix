@@ -5,7 +5,7 @@ import {BrowserRouter,Route} from 'react-router-dom';
 
 //Pages
 import Home from './pages/Homepage';
-import Login from './pages/Login';
+import Join from './pages/Join';
 import Signin from './pages/Signin';
 
 
@@ -17,9 +17,9 @@ require('./css/mystyles.scss');
 ReactDom.render(
     <BrowserRouter>
         <div className="app_all">
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
-        <Route path="/signin" component={Signin} />
+            <Route exact path="/" component={Home} />
+            <Route path="/signin" component={Signin} />
+            <Route path="/join" component={Join} />    
         </div>
     </BrowserRouter>
     ,

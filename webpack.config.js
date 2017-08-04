@@ -1,6 +1,20 @@
+//import modules
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
+//run production
+function getEntrySources(sources) {
+    if (process.env.NODE_ENV !== 'production') {
+        sources.push('webpack-dev-server/client?http://localhost:8080');
+        //sources.push('webpack/hot/only-dev-server');
+    }
+
+    return sources;
+}
+
+
+
+//run exports
 module.exports = {
     entry:'./app.js',
     output:{
@@ -17,18 +31,11 @@ module.exports = {
             {
                 test: /\.scss$/,
                 loader: ExtractTextPlugin.extract('css-loader!sass-loader')
-            //    loader: 'style-loader!css-loader!sass-loader'
             }
         ]
     },
     plugins: [
-       /* 
-       new ExtractTextPlugin('public/style.css', {
-            allChunks: true
-        })
-        */
-        //new ExtractTextPlugin({ filename: '[name].css', disable: false, allChunks: true })
-        new ExtractTextPlugin('../css/[name].css')
+        new ExtractTextPlugin('[name].css'),
     ],
     
     

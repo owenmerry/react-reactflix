@@ -26,6 +26,8 @@
 $color-primary:#e50914;
 $color-secondary:lighten(black,10%);
 
+$color-blue:#0080ff;
+
 $col-xs:768px;
 $col-sm:992px;  
 $col-md:1200px;
@@ -220,9 +222,9 @@ min-height:800px;
 /*######################################################################*/
 
 //app
-.app_all{
-    height:100%;
-}
+.site_all{height:100%;}
+.app_all{height:100%;}
+
 
 
 
@@ -376,7 +378,7 @@ body{
         background-size:cover;
         background-position: center center;
         .overlay{background-image: linear-gradient(to right,rgba(0,0,0,.8) 20%,rgba(0,0,0,0) 85%);background-color:transparent;}
-        .logo{position:absolute;top:20px;left:3%;svg{path{fill:$color-primary;}}} 
+        .logo{position:absolute;top:20px;left:3%;svg{width:160px;path{fill:$color-primary;}}} 
         .signin{
             position:absolute;top:20px;right:3%;
             .btn{font-size:16px;letter-spacing:1px;text-transform: none; padding: 7px 1em;@extend %font-medium;}
@@ -509,10 +511,63 @@ body{
         }
         .region{font-size:1.1em;margin-top:40px;
         }
-    } 
+    }  
     
     
 } 
+
+
+
+.signin_page{
+   height:100%; 
+    
+    
+    .portal_all{
+        position:relative;
+        height:90%;
+        background-color:black;
+        background-image:url(/img/signin/login-the-crown_2-1500x1000.jpg); 
+        background-repeat: no-repeat; 
+        background-size:cover;
+        background-position: top center;
+        .logo{position:absolute;top:20px;left:3%;svg{width:160px;path{fill:$color-primary;}}} 
+        .content{
+            width:460px;
+            background-color:darken(white,10%);
+            padding:40px 40px;
+            font-size:16px;
+            position:absolute;
+            top:50%;
+            left:50%;
+            transform:translate(-50%,-50%);
+            h1{color:black;font-size:2em;margin-bottom:20px;}
+            h3{font-size:1.05em;margin-bottom:3px;}
+            .form-control{border-radius: 2px;padding:21px 12px;}
+            .line{
+                margin-bottom:20px;
+                &.password{margin-bottom:80px;}
+                &.forget{a{color:$color-blue;}}
+                &.remember{
+                    border-bottom:solid 1px darken(white,30%);
+                    padding-bottom:10px;
+                    input{padding:10px 10px;width:34px;height:34px;float:left;margin:0px;}
+                    p{margin:0px;padding-left:10px;font-size:15px;color:black;float:left;line-height:34px;}
+                }
+                &.signup{p{color:black;a{color:$color-blue;}}}
+            }
+            .btn{font-size:18px;text-transform: none; border-radius: 2px; padding: 12px 2em;@extend %font-medium;}
+        }
+        //mobile
+        @media(max-width: $col-xs) {
+          height:100px;
+            
+        } 
+    }    
+    
+    
+    
+    
+}
 
  
 

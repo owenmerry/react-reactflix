@@ -5,13 +5,13 @@
 
 /* import */
 //boostrap
-@import '/node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 //@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css';
 
 //bootswatch
-//@import '/frameworks/bootswatch/paper.min.css';  
+//@import '../frameworks/bootswatch/paper.min.css';  
 //fonts
-//@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700');
 //fontawesome
 //@import '../frameworks/fontawesome/css/font-awesome.min.css'; 
 //animate css
@@ -219,13 +219,6 @@ min-height:800px;
 /* structure */
 /*######################################################################*/
 
-//app
-.app_all{
-    height:100%;
-}
-
-
-
 // scroll header popout
 @keyframes menuTopScroll {
     from {top:-100px;}
@@ -285,7 +278,7 @@ body{
             text-align:center;
             padding:0px;
             box-shadow: none;
-           // &:before{content:"";width:9px;height:9px;display: block;position: absolute;top: -9px;left: 88px;background-image:url(../images/site/menu-arrow.png)}
+            &:before{content:"";width:9px;height:9px;display: block;position: absolute;top: -9px;left: 88px;background-image:url(../images/site/menu-arrow.png)}
             li{a{padding:20px;
             font-size:16px;@extend %font;
             color:#5a5a5a;border-bottom:solid 1px #dddddd;
@@ -371,7 +364,7 @@ body{
         position:relative;
         height:90%;
         background-color:black;
-        background-image:url(/img/homepage/portal-bg.jpg); 
+        background-image:url(../img/homepage/portal-bg.jpg);
         background-repeat: no-repeat; 
         background-size:cover;
         background-position: center center;
@@ -509,7 +502,7 @@ body{
         }
         .region{font-size:1.1em;margin-top:40px;
         }
-    } 
+    }
     
     
 } 

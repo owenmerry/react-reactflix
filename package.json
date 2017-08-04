@@ -7,12 +7,17 @@
     "bootstrap": "^3.3.6",
     "gulp-util": "^3.0.7",
     "jquery.1": "^1.0.0",
-    "jquery.2": "^1.0.0"
+    "jquery.2": "^1.0.0",
+    "react-router-dom": "^4.1.2"
   },
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "browserify": "^13.3.0",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-browserify": "^0.5.1",
@@ -30,14 +35,21 @@
     "gulp-watch": "^4.3.11",
     "jshint": "^2.9.2",
     "jshint-stylish": "^2.2.0",
+    "node-sass": "^4.5.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
-    "vinyl-transform": "^1.0.0"
+    "vinyl-transform": "^1.0.0",
+    "webpack": "^3.4.1",
+    "webpack-dev-server": "^2.6.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC"

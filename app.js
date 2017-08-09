@@ -7,6 +7,8 @@ import {BrowserRouter,Route} from 'react-router-dom';
 import Home from './pages/Homepage';
 import Join from './pages/Join';
 import Signin from './pages/Signin';
+import Profile from './pages/Profile';
+import Browse from './pages/Browse';
 
 
 //Sass
@@ -20,6 +22,8 @@ ReactDom.render(
             <Route exact path="/" component={Home} />
             <Route path="/signin" component={Signin} />
             <Route path="/join" component={Join} />    
+            <Route path="/profile" component={Profile} />    
+            <Route path="/browse" component={Browse} />    
         </div>
     </BrowserRouter>
     ,

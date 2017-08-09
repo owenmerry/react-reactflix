@@ -33,15 +33,15 @@ render: function() {
                         <Link to="/">Forgotten your email or password?</Link>
                     </div>
                     <div className="line">
-                        <button className="btn btn-block">Sign In</button>
+                        <Link className="btn btn-block" to="/profile">Sign In</Link>
                     </div>
                     <div className="line remember">
                         <input type="checkbox" /><p>Remember Me</p>
                         <div className="clearfix"></div>
                     </div>
-                    <div className="line remember">
-                        <input type="checkbox" /><p>Remember Me</p>
-                        <div className="clearfix"></div>
+                    <div className="line facebook">
+                        <img src="" /> 
+                        <p><Link to="/">Login with Facebook</Link></p>
                     </div>
                     <div className="line signup">
                         <p>New to Netflix? <Link to="/">Sign up now.</Link></p>
@@ -49,6 +49,30 @@ render: function() {
                 </div>
             
             </div>
+            <div className="footer_all"> 
+                <div className="wrapper">
+                <div className="call">Questions? Call 1800 948 616</div>
+                <div className="lists">
+                    <div className="link"><a href="/">FAQ</a></div>
+                    <div className="link"><a href="/">Help Centre</a></div>
+                    <div className="link"><a href="/">Account</a></div>
+                    <div className="link"><a href="/">Media Centre</a></div>
+                    <div className="link"><a href="/">Investor Relations</a></div>
+                    <div className="link"><a href="/">Jobs</a></div>
+                    <div className="link"><a href="/">Gift Cards</a></div>
+                    <div className="link"><a href="/">Ways to Watch</a></div>
+                    <div className="link"><a href="/">Terms of Use</a></div>
+                    <div className="link"><a href="/">Privacy</a></div>
+                    <div className="link"><a href="/">Cookie Preferences</a></div>
+                    <div className="link"><a href="/">Corporate Information</a></div>
+                    <div className="link"><a href="/">Contact Us</a></div>
+                    <div className="link"><a href="/">Speed Test</a></div>
+                    <div className="link"><a href="/">Netflix Originals</a></div>
+                </div>
+                    <div className="region">Netflix Ireland</div>
+            </div>
+        </div>
+            
         </div>
     );
   }

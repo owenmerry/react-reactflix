@@ -27,6 +27,7 @@ $color-primary:#e50914;
 $color-secondary:lighten(black,10%);
 
 $color-blue:#0080ff;
+$color-green:#46d369;
 
 $col-xs:768px;
 $col-sm:992px;  
@@ -36,7 +37,7 @@ $col-lg:1930px;
 
 /* extends */
 //%font{font-family:'Roboto Slab';font-weight:100;} 
-%font{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:100;} 
+%font{font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:400;} 
 %font-medium{font-weight:400;}
 %font-bold{font-weight:700;}
 
@@ -351,6 +352,110 @@ body{
 
 
 /*######################################################################*/
+/* components */
+/*######################################################################*/
+
+    .videolist{
+                
+                transform: translateX(60px);
+                $transition : .2s;
+            
+            	display: flex;
+                //align-items:center;
+                //justify-content:center;
+                .video{
+                float: left;
+                width:20%;height:135px;
+                background-color:lighten(black,15%);
+                margin-right:5px;
+                transition: transform $transition;
+                position: relative;
+                }
+            
+            
+                .video {
+                    transform: translateX(-25%);
+                }
+
+                .video:hover {
+                    transform: scale(1.5);
+                    transition-duration: $transition/1.1;
+                    z-index:50; 
+                }
+
+                .video:hover ~ .video {
+                    transform: translateX(25%);
+                }
+                
+                
+            }
+    .videoinfo{
+        height:500px;
+        background-color:black;
+        color:darken(white,30%);
+        position: relative;
+        .content{
+            width:400px;
+            font-size:17px;
+            padding-top:20px;
+            position: relative;
+            z-index:3;
+            .image{img{width:100%;}margin-bottom:15px;}
+            .details{
+                @extend %font-bold;
+                color:darken(white,60%);
+                margin-bottom:15px;
+                font-size:15px;
+                
+                .match{color:$color-green;margin-right:10px;}
+                .year{margin-right:10px;}
+                .maturity{border:solid 1px darken(white,60%);padding:0px 5px;font-size:13px;margin-right:10px;}
+                .collection{}
+            }
+            .title{
+                margin-bottom:10px;
+                .white{color:white;@extend %font-bold;}
+                .episode{.title{margin-right:3px;}}
+            }
+            .seen{
+                margin-bottom:10px;
+                background-color:darken(white,80%);
+                .watched{
+                    height:2px;
+                    width:30%;
+                    background-color:$color-primary;
+                    }
+            }
+            .description{}
+        }
+        .imagebackground{
+            width:70%;
+            position: absolute;
+            top:0px;
+            right:0px;
+            height:100%;
+            background-image:url(/img/browse/dave-chappelle.jpg);
+            background-size: cover;
+            z-index:1;
+            .videoblock{
+                width:100%;
+                height:100%;
+                position:relative;
+                .gradient{
+                    position:absolute;
+                    top:0px;left:0px;
+                    width:400px;
+                    height:100%;
+                    background:linear-gradient(to right,black,rgba(black,0));
+                }
+            }
+        }
+    } 
+
+
+
+
+/*######################################################################*/
 /* pages */
 /*######################################################################*/
 
@@ -536,6 +641,7 @@ body{
             background-color:darken(white,10%);
             padding:40px 40px;
             font-size:15px;
+            font-weight:400;
             position:absolute;
             top:50%;
             left:50%;
@@ -624,11 +730,166 @@ body{
 
 
 .browse_page{
-    height:100%;
-    background-color:lighten(black,5%);
-    .logo_all{
-        position:absolute;top:20px;left:3%;svg{width:110px;path{fill:$color-primary;}}
+    background-color:lighten(black,9%);
+    
+    .wrapper{width:90%;}
+    
+    
+    .menu_all{
+        position:fixed;top:0px;left:0px;width:100%;height:90px;
+        font-size:16px;
+        background: linear-gradient(black, rgba(black,0));
+        @extend %font-medium;
+        z-index:500;
+        
+        &.scroll{background:rgba(black,.5);}
+        a{
+            color:white;padding:10px 20px;display:inline-block;
+            &.highlighted{color:$color-primary;@extend %font-bold;}
+            &:hover{text-decoration:none;}
+            svg{fill:white;}
+        }
+        
+        .left{
+            position:absolute;top:20px;left:3%;
+            display:flex;
+            .logo{
+                svg{width:110px;path{fill:$color-primary;}}
+                margin-right:10px;
+            }
+            .browse{
+                flex:1;
+                a{svg{height:10px;fill:$color-primary;}}
+            }
+        }
+        .right{
+            position:absolute;top:20px;right:3%;
+            
+            a{padding:10px 40px;}
+            .bell{padding:0px;svg{position:relative;top:11px;height:30px;}}
+            .search{svg{height:12px;margin-right:10px;}}
+            .account{
+                padding:0px 40px;
+                font-size:14px;
+                @extend %font-bold;
+                svg{height:10px;}
+                .image{background-image:url('/img/profile/PICON_025.png');
+                    background-size: cover;background-position: center center;
+                    height:32px;width:32px; display:inline-block;
+                    position:relative;top:11px;margin-right:10px;
+                }
+            }
+        }
     }
+    
+    
+    .portal_all{
+        background-image:url('/img/browse/browse-portal.png');
+        background-size: cover;background-position: top center;
+        background-color:lighten(black,20%);
+        height:95vh;
+        position:relative;
+        .wrapper{
+            height:100%;position: relative;z-index: 5;
+            .image{img{width:100%;}margin-bottom:20px;}
+            .content{
+                position:absolute;top:26%;left:0%;
+                width:440px;
+                p{font-size:.8em;}
+                .buttons{
+                    .btn{
+                        border-radius:0px;
+                        padding:10px 30px;
+                        margin-right:20px;
+                        font-size:15px;
+                        svg{height:15px;width:15px;fill:white;position:relative;top:3px;margin-right:5px;}
+                        &.red{
+                            &:hover{
+                                background-color:lighten($color-primary,10%);
+                            }
+                        }
+                        &.black{
+                            background-color:rgba(black,.4);
+                            border:solid 1px rgba(white,.4);
+                            &:hover{
+                            background-color:rgba(black,.2);
+                            border:solid 1px rgba(white,.2);    
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+        
+        .gradient{
+                position:absolute;
+                bottom:0px;left:0px;
+                width:100%;
+                height:200px;
+                background:linear-gradient(rgba(black,0),lighten(black,9%));
+            }
+        
+    }   
+    
+    
+    
+    .watching_all{
+        position: relative;
+        margin-top:-50px;
+        margin-bottom:20px;
+        z-index:1;
+        //height:239px;
+        h2{
+            margin-bottom:10px;color:white;font-size:18px;
+            @extend %font-bold;
+        }      
+        &:hover{z-index:3;}
+    }
+    
+    
+    
+    .popular_all{
+        position: relative;
+        margin-bottom:20px;
+        z-index:1;
+        h2{
+            margin-bottom:10px;color:white;font-size:15px;
+            @extend %font-bold;
+            text-transform:uppercase;
+        } 
+        
+        .videolist{
+            transform: translateX(15px);
+            .video{height:400px;}
+            .video {
+                    transform: translateX(-6%);
+                }
+                .video:hover {
+                    transform: scale(1.12);
+                }
+                .video:hover ~ .video {
+                    transform: translateX(6%);
+                }
+        }
+       &:hover{z-index:3;} 
+    }
+    
+    
+    
+    .list_all{
+        position: relative;
+        margin-bottom:20px;
+        z-index:1;
+        //height:239px;
+        h2{
+            margin-bottom:10px;color:white;font-size:16px;
+            @extend %font-bold;
+        }      
+       &:hover{z-index:3;} 
+    }    
+    
+    
     
 }
 
